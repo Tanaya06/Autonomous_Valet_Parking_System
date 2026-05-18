@@ -1,0 +1,3 @@
+<depend>launch</depend>
+<depend>launch_ros</depend>
+<depend>ament_index_python</depend>
