@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="AVPSParking">
+
+  <BehaviorTree ID="AVPSParking">
+    <!--
+      ReactiveSequence: if any child returns FAILURE,
+      the whole sequence restarts from the beginning.
+    -->
+    <ReactiveSequence name="parking_mission">
+
+      <!-- Step 1: Navigate to the parking zone entrance -->
+      <NavigateToZone
+        name="go_to_parking_zone"
+        goal_x="0.0"
+        goal_y="4.0"
+        goal_yaw="1.5707"/>
+
+      <!-- Step 2: Navigate to a specific free slot (Slot A3) -->
+      <NavigateToZone
+        name="go_to_slot_a3"
+        goal_x="3.0"
+        goal_y="6.5"
+        goal_yaw="1.5707"/>
+
+    </ReactiveSequence>
+  </BehaviorTree>
+
+</root>
