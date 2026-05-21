@@ -1,0 +1,48 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+
+Visualization Manager:
+  Global Options:
+    Fixed Frame: map
+    Background Color: 48; 48; 48
+
+  Displays:
+    - Class: rviz_default_plugins/Map
+      Name: Map
+      Topic: /map
+      Alpha: 0.7
+      Enabled: true
+
+    - Class: rviz_default_plugins/LaserScan
+      Name: LiDAR Scan
+      Topic: /scan
+      Color: 255; 50; 50
+      Size (m): 0.03
+      Enabled: true
+
+    - Class: rviz_default_plugins/RobotModel
+      Name: Robot
+      Description Topic: /robot_description
+      Enabled: true
+
+    - Class: rviz_default_plugins/Path
+      Name: Global Path
+      Topic: /plan
+      Color: 0; 200; 0
+      Enabled: true
+
+    - Class: rviz_default_plugins/Odometry
+      Name: Odometry
+      Topic: /odom
+      Enabled: true
+
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: false
+
+    - Class: nav2_rviz_plugins/Nav2Panel
+      Name: Navigation
+      Enabled: true
