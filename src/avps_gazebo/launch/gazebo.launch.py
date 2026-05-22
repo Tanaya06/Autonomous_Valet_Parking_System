@@ -7,6 +7,7 @@ from launch.actions import (
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     pkg_gazebo    = get_package_share_directory('avps_gazebo')
@@ -15,7 +16,7 @@ def generate_launch_description():
 
     world_file    = os.path.join(pkg_gazebo, 'worlds', 'parking_lot.world')
     urdf_file     = os.path.join(pkg_desc,   'urdf',   'avps_robot.urdf.xacro')
-    robot_desc    = Command(['xacro ', urdf_file])
+    robot_desc    = ParameterValue(Command(['xacro ', urdf_file]), value_type=str)
 
     return LaunchDescription([
 
