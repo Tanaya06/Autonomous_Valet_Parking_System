@@ -14,23 +14,26 @@ struct Pose2D
   double yaw{0.0};
 };
 
+struct PurePursuitParams
+{
+  double lookahead_dist{0.6};
+  double linear_velocity{0.3};
+  double max_angular_vel{1.5};
+  double goal_tolerance{0.25};
+};
+
+struct PurePursuitCommand
+{
+  double linear{0.0};
+  double angular{0.0};
+  bool goal_reached{false};
+};
+
 class PurePursuit
 {
 public:
-  struct Params
-  {
-    double lookahead_dist{0.6};
-    double linear_velocity{0.3};
-    double max_angular_vel{1.5};
-    double goal_tolerance{0.25};
-  };
-
-  struct Command
-  {
-    double linear{0.0};
-    double angular{0.0};
-    bool goal_reached{false};
-  };
+  using Params = PurePursuitParams;
+  using Command = PurePursuitCommand;
 
   explicit PurePursuit(const Params & params = Params{});
 

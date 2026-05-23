@@ -19,7 +19,7 @@ namespace avps
 class ControllerNode : public rclcpp::Node
 {
 public:
-  explicit ControllerNode(const rclcpp::NodeOptions & opts = {})
+  explicit ControllerNode(const rclcpp::NodeOptions & opts = rclcpp::NodeOptions{})
   : Node("avps_controller_node", opts)
   {
     declare_parameter("controller_frequency", 10.0);
