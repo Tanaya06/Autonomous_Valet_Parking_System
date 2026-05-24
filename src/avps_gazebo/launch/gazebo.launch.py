@@ -48,7 +48,7 @@ def generate_launch_description():
         # Delay by 3 seconds to let Gz Harmonic finish loading the world
         # Uses ros_gz_sim 'create' executable (not gazebo_ros spawn_entity)
         TimerAction(
-            period=3.0,
+            period=10.0,
             actions=[
                 Node(
                     package='ros_gz_sim',
@@ -73,7 +73,7 @@ def generate_launch_description():
         #         /ros_topic@ros_type]gz_type  (ros → gz, one-way)
         # Delay slightly to let the robot spawn first.
         TimerAction(
-            period=4.0,
+            period=12.0,
             actions=[
                 Node(
                     package='ros_gz_bridge',
